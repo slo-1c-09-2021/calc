@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pole trójkąta</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+
+    <script>
+        function oblicz()
+        {
+            var a = document.getElementById("a").value;
+	        a = parseFloat(a);
+            var b = document.getElementById("b").value;
+	        b = parseFloat(b);
+            var c = document.getElementById("c").value;
+	        c = parseFloat(c);
+
+            var S = Math.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(b+c-a))/4;
+            document.getElementById("wpr").innerHTML = S ;
+        }
+    </script>
+
+</head>
+<body>
+    <div id="container">
+
+        <div id="topbar">
+            <p id="topright">SLO Junior Developer</p><br/>
+            <h1>
+            Kalkulator obliczający pole trójkąta na podstawie 3 boków
+            </h1>
+        </div>
+
+        <div id="input">
+            <label for ="a" >Podaj długość boku a:   <label>
+            <input type="text" dir="auto" id="a">
+            <br/> <br/>
+            <label for ="b" >Podaj długość boku b:   <label>
+            <input type="text" dir="auto" id="b">
+            <br/> <br/>
+            <label for ="c" >Podaj długość boku c:   <label>
+            <input type="text" dir="auto" id="c">
+            <br/> <br/> <br/>
+            <input type="button" value="Oblicz pole" onclick="oblicz()"/>
+        </div>
+
+        <div id="wynik">
+            <h2>Pole trójkąta wynosi: </h2>
+            
+            <h3 id="wpr"> </h3>
+        </div>
+
+
+    </div>
+</body>
+</html>
